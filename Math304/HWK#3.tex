@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\begin{document}
+ 
+\section*{Problem 1}
+ How many sets of three integers between 1 and 20 are possible if no two consecutive integers are to be in a set?
+  \bigskip
+  
+  \subsection*{Solution}
+      There are $\mathcal{P}(20,3) = 1140$ number of combinations of 3-element subsets of numbers from 1 to 20. 
+      \\ \\
+      If three integers are consecutive they have the form: \\
+      $a_{0}=1,a_{1}=2,a_{2}=3$ \\
+      $a_{n},a+{n+1},a_{n+2}$. 
+      \\ \\
+      We want to form subsets that dont have two consecutive integers.
+      \\ \\ 
+      So choose $a_{n+1}$ to not be any of the subsets. \\
+      Then $a_{n}$ and $a_{n+2}$ are in one set, and $a_{n+1}$ is in the other. 
+      \\ \\
+      If we line up the 20 integers in increasing order we have that either both $a_{n}$ and $a_{n+2}$ will be odd, or both will be even, and $a_{n+1}$ will have opposite parity. 
+      \\ \\
+      So to get from some odd number $2i+1$ to the next odd number $2i+3$ we just subtract the even number between them. Likewise to get from one even number to the next we subtract the odd number between them. 
+      \\ \\
+      Between any two even (or odd) numbers we will have two dividers:
+      \\ \\
+      1  2  3  4
+      \\ \\
+      1  2 | 3 | 4 
+      So if we want subsets of size $k$ There will be $k-1$ dividers, with two between each number so we have $2(k-1)$ dividers which can be placed in $k+1$ spaces between even (or odd) numbers. 
+      \\ \\
+      20 numbers in $k$ subsets and $2(k-1)$ dividers for $k+1$ spaces:
+      $20-k-2(k-1) = 20 - k -2k+2 = 20 - 3k + 2$
+      \\ 
+      Then $20-3k+2 + (k+1) - 1 = 20-2k+2$ when $k=3$ we have 16 $\binom{16}{3} = 560$
+  
+\section*{Problem 2}
+    There are $n\geq4$ knights seated around King Arthur's round table and three of them are selected to be sent off to slay a troublesome dragon. What is the probability that at least two of the three were seated next to each other?
+    \bigskip
+    
+    \textbf{Solution:}
+    \bigskip
+    
+    Suppose that $n \geq 4$ and we select three at random to go kill some poor dragon, (who is probably just misunderstood maybe it ate some sheep or something dragon's probably don't have much of a concept of ownership and they undoubtedly have to eat). 
+    \\ \\
+    \textbf{Count the Complement}
+    \\ 
+    Suppose we don't want the knights chosen to be knights which were seated next to each other.
+    \\ \\
+    The total number of ways this can happen is $C = \binom{n-3}{3}$; to fix the overcounting due to rotations divide by $(n-3)$ to get $C/(n-3)$
+    \\ \\
+    Let $T$ be the number of total ways to choose 3 from n this is $T = \binom{n}{3}$; adjust for the rotations again by dividing by n to get $T/n$.
+    \\ \\
+    Now subtract $C/(n-3)$ from the adjusted total and divide by the adjusted total (because we want a probability) to get:
+    $$\frac{\frac{\binom{n}{3}}{n} - \frac{\binom{n-3}{3}}{(n-3)}}{\frac{\binom{n}{3}}{n}}= \frac{6(n-3)}{(n-2)(n-1)}$$
+    \bigskip
+    \textit{not to sure about how I simplified the right hand side.}
+ 
+\section*{Problem 3}
+

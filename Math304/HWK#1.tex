@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\begin{document}
+ 
+\section*{Problem 1: }
+How many different ways are there to pick a man and woman who are not married to each other from a group of n married couples? 
+\\ \\
+
+\subsubsection*{Warm Up: Non-traditional Marriages} 
+To warm up consider the case for $n = 10$ where the order doesn't matter and no one has gotten married yet (\textit{because it's more fun this way, so I'll remember it maybe more}).
+\\ \\
+
+\textbf{WLOG:} Line the boys and girls up in one big line then randomly choose someone to be the first and pick someone for them to marry. 
+\\ \\
+After you have chosen a person there are 9 people you can marry them off to, then you send them away (\textit{they do not get back in line. Perhaps they went on a honeymoon; perhaps they are in a room somewhere awkwardly staring at each other in shock}). \\
+
+Now you randomly pick another person (person 8) and choose someone for them to marry, you have 7 people to choose from. \\ \\
+So we have: $$\mathcal{P}(n,2k-1) = (2k-1)(2k-2)...(1) = 9\cdot7\cdot5\cdot ... \cdot 3 \cdot1 = 945$$
+\\ \\
+
+\subsubsection*{TestCase: Finite Traditional Marriage} 
+Again choose $n=10$, but this time make it traditional marriages (european traditional if you will boy-girl pairs). \\
+Line all the boys up in one row and the girls in another facing one another.
+Order the lines by some fixed arbitrary specification, say by height largest to smallest (it doesn't really matter, we can even skip this all together). \\
+Arbitrarly choose someone and then choose their opposite sex mate. 
+\\ \\
+For step zero we have 10 scared unmarried boys and girls now in \textbf{two} lines. \\
+Choose the first person in one of the lines and marry them off to the first person in the opposite line. \\
+Pairing them off and sending them away gives: $(5-1)(5-2)...(5-4) = 5!$, but there were 10 people all together. So this is really 5 pairs of two or $5!$. 
+\\ \\ 
+
+\subsection*{Actual Solution: }
+Someone $(n)$ and someone else's spouse $(n-1)$ can be picked from a group of $n$ married couples in $n(n-1)$ ways. \textit{(Yes I misread the question before).} 
+\\ \\
+
+\section*{Problem 2: }
+How many nonempty words can be formed from three As and five B’s?
+\textit{(not all letters must be used, any sequence of letters counts as a word)}
+\\ \\
+There are 7 letters available 3 are A's and 4 are B's.
+So we have $\frac{7!}{3!4!} = 35$ possible words with repetition. 
+\\ \\
+\section*{Problem 3: }
+\textbf{How many ternary (0,1,2) sequences of length 10 are there without any two consecutive digits being the same?}
+\\ \\ 
+\subsection*{Solution: }
+For the first slot there is $\dbinom{3}{1}$, the second slot has $\dbinom{2}{1}$, the third also has $\dbinom{2}{1}$ and so on. \\
+So we get $3 \times 2^{9}$ different sequences possible. 
+\\ \\
+\section*{Problem 4: }
+How many different outcomes are possible when a pair of dice, one red and one white are rolled two consecutive times?
+\\ \\
+\subsection*{Solution: }
+Each die has 6 sides so it has 6 possible outcomes each time it is rolled. Two dice are rolled so the sample space is $6 \times 6 = 36$.\\
+However, each die only has 6 possible outcomes $1, 2, 3, 4, 5, 6$ which is a probability of $\frac{1}{6}$ for any of these numbers to appear. \\
+Since each number has the possibility of appearing twice and the dice are independed we multiply (\textit{each roll of the dice constitutes one stage in a multistage process}) to get $\frac{1}{6} \times \frac{1}{6} \times 6 = \frac{1}{6}$.
+\\ \\
+\section*{Problem 5: }
+Construct a perfect cover of an $(8 \times 8)$ chessboard with dominoes $(1 \times 2)$ having no fault-line.
+\\ \\
+Let $(p \times q) = (8 \times 8)$ and let $(s \times t) = (1 \times 2)$.\\
+Assume $pq > st$ and $gcd(s,t)=1$. \\ 
+The tiling will include a fault-line if and only if the following conditions hold: 
+\begin{itemize}
+    \item Both $a$ and $b$ divide $p$ or $q$. 
+    \item There exist non-zero integers $x,y$ such that $x,y$ can be expressed in at least two ways in the form: $xs+yt$. 
+    \item If $(s,t) = (1,2)$ then $(p,q) \neq (6,6)$.
+\end{itemize}
+
+\subsection*{Solution: }
+The first condition is satisfied for both $s$ and $t$.\\
+The second condition can be obtained simply by inserting any integer values for $x$ and $y$ and then reversing them. \\
+The third condition can be considered a cofactor of the $8 \times 8$ board obtained by removing two rows and two columns. \\
+This means that for the given $1 \times 2$ domino, there does not exist any such tiling that will satisfy the last condition. Since the requirement is biconditional the board will always have a fault line if any condition fails. \\ \\
+
+\section*{Problem 6: }
+\textbf{Show that there is no magic cube of dimension 2.}\\ \\
+\subsubsection*{Proof: }
+Assume that a magic square of order three exists. \\
+Then for the center cross section the square $k$ must have the value $k = \frac{S}{3}$ where $S$ is the constant sum. \\
+Taking the sum of the two diagonals and center column we have: $$(a+k+c)+(d+k+f)+(g+k+h) = 3S = (a,d,g)+(c+f+h)+(3k) $$
+This means that $3k = S$. \\
+But this is impossible only one center may have this value. \\
+$\therefore$ Contradiction. \\
+There cannot exist a magic cube of order 3 (\textit i.e. Of dimension 2).
+
+
+
+\end{document}

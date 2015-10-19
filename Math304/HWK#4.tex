@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+
+\begin{document}
+
+\section*{Problem}  
+  \textit{"In any sequence $a_{0},a_{1},\ldots ,a_{ml-1}$ of $ml-1$ distinct real numbers, there exists an increasing subsequence 
+  $$a_{i_0} < a_{i_1} < \ldots < a_{i_m-1}$$ 
+  for $(i_{0} < i_{1} < \ldots < i_{m-1})$ of length $m-1$
+  $$a_{j_0} < a_{j_1} < \ldots < a_{j_l-1}$$ 
+  for $(j_{0} < j_{1} < \ldots < j_{l-1})$
+  of length $n-1$ 
+  \\ \\ 
+  or \textbf{both}."} 
+  \bigskip
+  
+  \textbf{\pf} \\ \\
+  Let $\{a_n\}$ be a finite sequence of real numbers such that the length of $\{a_n\}$ is $t_{n} = (m-1)(l-1)+1$.
+  \\ 
+  Where $n = ml-1$
+  \\ \\
+  \(\textit{I just like my "main" labels to have one index. It might be icky but I'm not sure yet.}\)
+  \\ \\
+  \textbf{Case 1: Suppose $\{a_{n}\}$ is a monotonically increasing sequence}
+  \\ \\
+  Let $i \in I$ where $I$ is a finite indexing set of integers.
+  \\ 
+  Likewise, let $j \in J$ be another finite indexing set of integers. 
+  \\ 
+  Where both $I$ and $J$ will be used as sub-subscripts for the elements in the subsequence. 
+  \\ \\
+  The sequence $a_{n}$ has only $(m-1)(l-1)$ possible labels for each $a_{i}$ and $(m-1)(l-1)+1$ total possible labels in all.
+  \\ \\
+  If the sequence is monotonically increasing then given some $a_{i} \in \{a_{ml-1}\}$ there is an ordered pair $t_{i} = (m_{i}, l_{i})$ such that the length of $|t_{i}|$ is at most $m-1$ and at least $m$.
+  \\ \\ 
+  So, whenever $i < j$ then we have that $a_{i} \leq a_{j}$, so $m_{i} < m_{j}$ for all $i \in I$ and all $j \in J$.
+  \\ \\
+  i.e. If $m_{i}$ in $t_{n}$ is not in the range of $i$.
+  \\ \\
+  Then since the number of possible labels (length) of the subsequence is at most $m-1$ and only $(m-1)(l-1)$ for the original sequence. 
+  \\ 
+  By pigeons the sequence must have length at least $m$ and so the subsequence must be increasing. 
+  \bigskip
+  
+  \textbf{Case 2: Suppose $\{a_{n}\}$ is a monotonically decreasing sequence}
+  \\ \\
+  Let $i \in I$ where $I$ is a finite indexing set of integers.
+  \\ 
+  Likewise, let $j \in J$ be another finite indexing set of integers. 
+  \\ 
+  Where both $I$ and $J$ will be used as sub-subscripts for the elements in the subsequence. 
+  \\ \\
+  The sequence $a_{n}$ has only $(m-1)(l-1)$ possible labels for each $a_{i}$ and $(m-1)(l-1)+1$ total possible labels in all.
+  \bigskip
+  
+  \pagebreak
+  
+  
+  If the sequence is monotonically decreasing then given some $a_{i} \in \{a_{ml-1}\}$ there is an ordered pair $t_{i} = (m_{i}, l_{i})$ such that the length of $|t_{i}|$ is at most $l-1$ and at least $l$.
+  \\ \\ 
+  So, whenever $i < j$ then we have that $a_{i} \geq a_{j}$, so $l_{i} < l_{j}$ for all $i \in I$ and all $j \in J$.
+  \\ \\
+  i.e. If $l_{i}$ in $t_{n}$ is not in the range of $j$.
+  \\ \\
+  Then since the number of possible labels (length) of the subsequence is at most $l-1$ and only $(m-1)(l-1)$ for the original sequence. 
+  \\ 
+  By pigeons the sequence must have length at least $l$ and so the subsequence must be decreasing.
+  \\ \\
+  $\blacksquare$
+
+\bigskip
+
+\section*{Problem}
+    \textbf{Chinese Remainder Theorem}
+    \\
+    \textit{Let} $n_{1},n_{2},\ldots,n_{m}$ \textit{be a sequence such that whenever} $gcd(n_{i},n_{j}) =1$ \textit{where} $i \neq j$ \textit{for some finite indexing sets of integers $I$ and $J$ the following congruences:} 
+    \\ \\
+    \begin{align}
+        x \equiv  b_{1}\imod{n_{1}}  \\ 
+        x \equiv  b_{2}\imod{n_{1}}  \\
+        \vdots                       \\
+        x \equiv  b_{m}\imod{n_{m}}  \\
+    \end{align}
+    \\ \\
+    \textit{have the unique modulus}
+    $\prod_{i=1}^{m} m_{i}$ \textit{as a solution.}
+    
+    \bigskip
+    
+    \textbf{\pf}
+    \\ \\
+    Let $N = \prod_{i=1}^{m} m_{i}$ and $N_{k} = \frac{N}{n_{k}}$ where $m = {1,2, \ldots, k}$.
+    \\ \\
+    If $n_{i}$ is coprime to $n_{k}$ for $i \neq k$ is true.
+    \\
+    Then for all $n_{k}$ and $N_{k}$ we have 
+    $$gcd( n_{k},N_{k}) = (n_{1}n_{2} \ldots n_{k-1}n_{k+1} \ldots n_{m},n_{k})=1$$
+    \\ \\
+    The system of linear congruences has a unique solution modulo $n_{k}$
+    \\
+    $N_{k}x_{k}\imod{n_{k}} \equiv x_{k}$
+    \bigskip
+    
+    \pagebreak
+    
+    Let $x_{k}$ be the solution we want.
+    \\ \\
+    To show that $x_{0} = b_{1}N_{1}x_{1} + b_{2}N_{2}x_{2} + \ldots b_{m}N_{m}x_{m}$ will satisfy each congruence.
+    \\ \\
+    Evaluating $x_{0} \imod{n_{k}}$ for every $k = {1,2, \ldots, m}$ such that $i \neq k \Rightarrow n_{k}/N_{i} \equiv 0 \imod{n_{k}}.$
+    \\ \\
+    Then for every $k$ we have $x_{0} \equiv b_{k}N{k}x_{k}$ by equivalence with zero.
+    \\
+    Since we could find an $x_{k}$ such that $N_{k}x_{k} \equiv 1\imod{n}$ we get the $x_{0}$ we wanted. 
+    \\ \\
+    To show this $x_{0}$ is unique suppose that $x'$ is also a solution to the system. \\
+    Then $x_{0} \equiv x' \equiv b_{k}\imod{n_{k}}$ for every $k$.
+    \\
+    Then every $n_k$ will divide $x' - x_{0}$
+    \\
+    However, this would mean $\prod_{i=1}^{m} n_{i}/(x'-x_{0})$,
+    \\
+    i.e. 
+    \\
+    $x' \equiv x_{0} \imod{\prod_{i=1}^{m} n_{i}}$
+    \\ 
+    So they are the same solution and $x_{0}$ is unique.
+    \\ 
+    $\blacksquare$
+
+    \bigskip
+    Suppose the $n_{i}$ are not relatively prime.
+    \\
+    $x \equiv 1\imod{2}$
+    \\
+    $x \equiv 2\imod{4}$
+    \\ \\
+    Then in order for the first equation to be true we would need $x \equiv 1 +2j$ \\
+    $1 - 1 + 2j \equiv 2\imod{4 - 1} 
+    \\
+    $2j \equiv 1 \imod{4}    
+    \\ 
+    Then $x^{-1} \equiv 1$
+    \\
+    We would have a greatest common factor of two and four is two
+    \\
+    Checking to see if 2 divides 1 of course fails to give an integer value.
+    \\
+    So we are done.
+    \pagebreak
+    
+
+\section*{Problem}
+    \textbf{A}
+    \\ \\
+    Split the triangle into four equal triangles by connecting the midpoints of all the sides. \\ Then the distance between any two points is the side of one of the smaller triangles which is one half. 
+    \\ \\
+    So if we have four triangles and five points by pigeons one of the triangles must have at least two of the points, and the distance between these two points is at most one half.
+    \bigskip
+    $\blacksquare$
+    
+    \textbf{B} 
+    \\ \\
+    The solution is the same as that above by substitution.
+    \\
+    Suppose we cut the triangle into $n^{2}$ triangles connect the midpoints of all sides. Then the distance between any two points is the length of the side of one of the smaller triangles. We have $n/n^{2} = 1/n$.
+    \\
+    $\blacksquare$
+    
+\bigskip
+
+\section*{Problem }
+    This is Ramsey's theorem (Erdos Szekeres actually) 
+    
+    minimal integer function of (9-1/3) + 1
+    
+\bigskip
+
+\section*{Problem}
+    $R(p,q) \leq binom{p+q-2}{p-1}$
+    $R(t_{1},t_{2}) = t_{1}, R(t_{2},t_{1}) = t_{2}, R(x, t_{1}) = x$
+
+
+\end{document}

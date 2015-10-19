@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\begin{document}
+
+\section*{Problem}
+  "In any sequence $a_{i},a_{2},\ldots,a_{mn+1}$ of $mn+1$ distinct real numbers, there exists an increasing subsequence $$ $a_{i_1}$ < a_{i_2} < \ldots < a_{i_m+1}$$ for $$(i_{1}<i_{2}< \ldots <i_{m+1})$$ of length $m+1$ \\ \\
+  $$a_{j_1} < a_{j_2} < \ldots < a_{j_n+1}$$ for $$(j_{1}<j_{2}< \ldots <j_{n+1})$$ 
+  of length $n+1$ or both." 
+  \bigskip
+
+\section*{Problem}
+    \textbf{Prove that in a group of $n > 1$ people there are two who have the same number of acquaintances in the group. (It is assumed that no one is acquainted with oneself.)}
+    \bigskip
+    
+    \textbf{Solution:} \\
+        \bigskip
+        
+        Let $G$ be the group and $n = |G|$, such that $n > 1$.
+        \\ \\
+        \textbf{Test Case($n=2$)}
+        
+        \bigskip
+        
+        Let $n_{1}, n_{2} \in G$ where $|G|=2$; then we have that $n_{1}$ knows $n_{2}$, likewise $n_{2}$ knows $n_{1}$. 
+        
+        \newline
+        
+        Then \textit{"I know you and you know me"} so the base case is true since everyone knows one person.
+        
+        \newline
+        
+        Conversely, if $n=2$ and neither $n_{1}$ nor $n_{2}$ know one another the base case is true, since both people know zero people in the group.
+        
+        \newline
+        
+        \textbf{Count the Complement:}
+        
+        \newline
+        
+        By supposition $n > 1$, and by assumption no one in the group can be aquainted with themselves. So for some $n_{i} \in G$ there must be some $n_{j} \in G$ that knows the same number of people as $n_{i}$; if there is not anyone in the group who doesn't know anyone else.  
+        
+        \newline
+        
+        If there is at least one (or $k$) person (people) who don't know anyone else, we count that as the complement of people who do know someone and we have the same result.
+         \newline
+         
+         we just reduce the number of people who do know at least one other person in the group by the one (or $k$) number of people do not know anyone in the group.
+        
+        \newline
+        
+        These cases are independent, and complements in $G$, so showing either case (counting the complement), shows the other as well. 
+        
+        \medskip
+        
+        $\blacksquare$
+        
+        \medskip
+        
+
+    \bigskip
+    
+\section*{Problem}
+    \textbf{Combinatorially prove the following binomial identity
+$$\sum_{k=0}^{r} {n+k\choose k} = { n + r + 1 \choose r }.$$}
+    
+    \bigskip
+
+    \textbf{Proof}(\textit{Combinatorial}):
+    
+    \newline
+    
+    Let $S$ be a set of positive integers.
+    Then $\mathcal{P}(S)$ denotes the power set of $S$, defined as the set of all subsets of $S$, including the empty set and $S$.
+    \newline
+    If $|S| = n$, the $|\mathcal{P}(S)|=2^{n}$, since for every subset the question is a binary (Boolean) type of question the membership in the subset of any element of $S$.
+    \newline
+    Namely, for elements $x,y \in \mathcal{P}(S) : \mathcal{P}(S) = \{(x_{1},y_{1}),(x_{2},y_{2}), \hdots,(x_{n},y_{n})\}$, for some ordered pair $(x_{i},y_{i})$ we ask if it is in some $M \subset \mathcal{P}(S)$. 
+    \newline
+    The answer of this membership can only ever be Yes or No for any element in $\mathcal{P}(S)$, the question is also binary for any position in $\mathcal{P}(S)$.
+    \newline
+    So we are essentially asking how many ways can we arrange pairs of elements of $S$, if we don't care about repetition.
+    \newline
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Document
+\end{document}
