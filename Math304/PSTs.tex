@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PSTs!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package Calls
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Call fancyhdr package
+\usepackage{fancyhdr}
+% Call extramarks package
+\usepackage{extramarks}
+% Call amsmath package
+\usepackage{amsmath}
+% Call amssymb package
+\usepackage{amssymb}
+% Call tikz package
+\usepackage{tikz}
+% Call arev font package
+\usepackage{arev}
+% Call ifthen package
+\usepackage{ifthen}
+% Call tcolorbox package
+\usepackage{tcolorbox}
+% Call fullpage package
+\usepackage{fullpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PST Construction
+\newtheorem{pst}{PST}
+
+% tcolorbox specification
+\newtcolorbox{mybox}[1]{minipage boxed title, 
+    enhanced,attach boxed title to top center= 
+        {yshift=-3mm,yshifttext=-1mm}, 
+    boxed title style={size=small,colback=red}, 
+    center title,title={#1}}
+%\begin{mybox}{My title} 
+%    \lipsum[2] 
+%\end{mybox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin List of PSTs
+\begin{document}
+
+
+\begin{mybox}{List of PSTs!}
+This list of PSTs are collected from \textit{"A Decade of the Berkeley Math Circle" by Zvezdelina Stankova and Tom Rike.}\\
+\begin{comment}
+    \textit{Zveda if you ever see this I am sorry, you were my very favorite and taught me more than you know.}
+\end{comment}
+\end{mybox}\bigskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin PSTs
+
+\section*{Combinatorics}
+
+
+\subsection*{Menus Make You Multiply}
+
+\begin{mybox}{\pst \textbf{Menus}}
+If the thing we are counting is the outcome of a \textit{multi-stage process}, then the number of the outcomes \textit{the product of the number of choices for each stage}. 
+\end{mybox}
+\\ \\
+
+
+\begin{mybox}{\textbf{Encoding}}
+When creating and using an encoding method, you must verify that there is a \textit{one-to-one correspondence} between the set of encodings and all possible outcomes in the problem. \\
+i.e. That every encoding corresponds to exactly one possible outcome, and every possible outcome corresponds to exactly one encoding. 
+\end{mybox}
+\\ \\
+
+\subsubsection*{\large Limitations of Multiplication: \textit{\small Multiplication works as long as the number of \\ decisions required at each stage stays constant.}}\bigskip
+
+
+\begin{mybox}{\textbf{Keep the Chaos Down}}
+To keep the chaos down when counting and to have some control over what is happening, it is helpful to \textit{order all of the involved object/people (or some subset of them)}. This order can be random or according to some specific criterion. 
+\end{mybox}
+\\ \\
+
+\begin{mybox}{\textbf{Mutually Excusive Cases}}
+Break the outcomes into several separate, \textit{mutually exclusive cases}. \\
+i.e. Every possible outcome must belong to exactly one of these cases. 
+\end{mybox}
+\\ \\
+
+
+\subsection*{Partition Leads to Addition}
+\bigskip
+
+
+\begin{mybox}{\textbf{Count the Total Outcomes}}
+Whenever we partition the outcomes of something into several cases, each requiring different counting methods, we \textit{add the number of outcomes} in each case to get the total number of outcomes. 
+\end{mybox}
+\\ \\
+
+
+\subsection*{Counting the Complement}
+\bigskip
+
+
+\begin{mybox}{I Like This But I Don't Like That}
+    The method of \textit{counting the complement}, is used when we can partition the total set of outcomes into the things we are interested in, and the resti (it's \textit{negation or complement}). \\
+    If the total is easy to count and the negation is easy to count, then we\\ \textit{count the complement} and our answer is just the difference of the two.  
+\end{mybox}
+\\ \\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Document
+\end{document}	
