@@ -1,0 +1,35 @@
+\subsection{Rising and Falling Factorials}
+
+\begin{defn}
+Suppose that $n$ is a positive integer and choose $\alpha$ to be the negative integer $-n$. 
+
+Then, \[\binom{\alpha}{k} = \binom{-n}{k} = \frac{-n(-n-1) \ldots (-n-k+1)}{k!} = (-1)^{k} \frac{n(n+1) \ldots (n+k-1)}{k!} = (-1)^{k} \binom{n+k-1}{k}\]
+
+Thus, for $|z| < 1$, we have
+
+\[(1+z)^{-n} = \frac{1}{(1+z)^{n}} = \sum_{k=0}^{\infty} (-1)^{k} \binom{n+k-1}{k} z^{k}\]
+
+Replacing $z$ by $-z$ we get:
+
+\[(1-z)^{-n} = \frac{1}{(1-z)^{n}} = \sum_{k=0}^{\infty} \binom{n+k-1}{k} z^{k}\]
+
+If $n=1$, then $\binom{n+k-1}{k} = \binom{k}{k} =1$ and so $\frac{1}{1+z} = \sum_{k=0}^{\infty} (-1)^{k}z^{k}$ whenever $|z| < 1$, and $\frac{1}{1-z} = \sum_{k=0}^{\infty} z^{k}$ whenever $|z| <1$.
+\end{defn}
+
+\medskip
+
+\begin{nota}
+    \[(x)_{n} = x(x-1)(x-2) \ldots (x-n+1)\]
+\end{nota}
+
+\medskip
+
+
+\subsubsection{Falling Factorial}
+
+\[x^{(n)}={(-1)}^{n}{(-x)}_{n}\]
+
+\subsubsection{Rising Factorial}
+
+ \[x^{(n)}={(x+n-1)}_{n}\]
+

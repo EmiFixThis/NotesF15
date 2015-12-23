@@ -1,0 +1,158 @@
+% 
+
+\documentclass[10pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    PACKAGES
+
+
+%    BASIC PACKAGES
+\usepackage[USenglish,UKenglish,british,american]{babel}
+\usepackage{xcolor} % for color
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[font={small,sf},labelfont=bf,format=hang]{caption}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{tcolorbox} 
+\tcbuselibrary{skins,theorems,raster,fitting} 
+
+
+%    MATH PACKAGES
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+
+%    DRAWING PACKAGES
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{verbatim}
+
+%\usepackage{tkz-berge}	% pretty graph theory
+%\usepackage{pgfplots}
+
+
+%    GLOSSARY
+\usepackage{glossaries}
+
+
+%    HYPERREF
+\usepackage{hyperref}
+\usepackage{url}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    ENVS
+
+
+%    THEOREM ENVS
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{pf}[thm]{Proof}
+\newtheorem{lemm}{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}{Proposition}
+\newtheorem{con}{Conjecture}
+\newtheorem{crit}{Criterion}
+\newtheorem{asu}{Assumption}
+
+
+%    DEFINITION ENVS
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{axi}{Axiom}
+\newtheorem{cond}{Condition}
+\newtheorem{prot}{Property}
+\newtheorem{rel}{Relation}
+
+\newtheorem{exmp}{Example}
+\newtheorem{xer}{Exercise}
+\newtheorem{obj}{Objective}
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{prob}{Problem}
+\newtheorem{sol}[prob]{Solution}
+
+\newtheorem{algo}{Algorithm}
+\newtheorem{que}{Question}
+
+\newtheorem{ojj}[asu]{Objection}
+
+
+%    REMARK ENVS
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newtheorem{nt}{Note}
+\newtheorem{nota}{Notation}
+\newtheorem{cla}{Claim}
+\newtheorem{summ}{Summary}
+\newtheorem{case}{Case}
+\newtheorem{cln}{Conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GLOSSARY SPECIFICATION
+%\makeglossaries
+%\loadglsentries{glossary}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    BEGIN DOCUMENT
+
+\begin{document}
+
+\include{title}
+
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    PAGES
+
+%    NOTES
+\include{notesSection}
+
+
+
+%    HOMEWORK
+\include{homeworkSection}
+
+
+%    EXAMS
+\include{examSection}
+
+
+%    END PAGES
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODOS
+\listoftodos
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    END DOCUMENT
+
+
+%    BIBLIOGRAPHY
+
+\pagestyle{empty}
+\bibliographystyle{alpha}
+\nocite{*}
+\bibliography{math304bib}
+\clearpage
+%\printbibliography
+\clearpage
+
+%    GLOSSARIES
+%\clearpage
+%\printglossaries
+%\clearpage
+
+\end{document}

@@ -1,0 +1,186 @@
+\documentclass{article}
+
+\usepackage{graphicx} 
+\usepackage{xcolor} 
+\usepackage{tikz} 
+\usepackage{tcolorbox} \tcbuselibrary{skins,theorems,raster,fitting} 
+\usepackage{array,tabularx} 
+\usepackage{amsmath,amssymb,textcomp}
+\everymath{\displaystyle}
+\flushbottom
+
+
+
+
+
+\begin{document} 
+  
+\section{Basic Counting Principles}
+
+We give five general counting principles and the formulas they imply, we also discuss their complementary counterparts.
+
+
+\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={The Partition Principle}, colback={white},colframe={black},colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+			
+
+A partion of a set $\mathcal{S}$ is a collection $\mathcal{S}_{1}, \mathcal{S}_{1}, \ldots, \mathcal{S}_{m}$ of subsets of $\mathcal{S}$ such that each element of $\mathcal{S}$ is contained in exactly one of the subsets. 
+
+\[\mathcal{S} = \mathcal{S}_{1} \cup \mathcal{S}_{2} \cup \ldots \cup \mathcal{S}_{m}\]
+
+\[\mathcal{S}_{i} \cap \mathcal{S}_{j} = \emptyset\] where $i \neq j$.
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={The Addition Principle}, colback={white},colframe={black},colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+If a set $\mathcal{S}$ is partitioned into subsets $\mathcal{S}_{1}, \mathcal{S}_{2}, \ldots, \mathcal{S}_{m}$, then we can find the size of $\mathcal{S}$ by adding the sizes of all the partitions. 
+
+\[|\mathcal{S}| = |\mathcal{S}_{1}| + |\mathcal{S}_{2}| + \ldots + |\mathcal{S}_{m}|\]
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={The Multiplication Principle}, colback={white},colframe={black},colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+Let $\mathcal{S}$ be a set of ordered pairs $(a,b)$, where $a \in \mathcal{P}$ such that $|\mathcal{P}| = p$, also for every $a$ we have $q$ possible choices for $b$. 
+
+Then the size of $\mathcal{S}$ is $p \times q$. 
+\[|\mathcal{S}| = p \times q\]
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={The Subtraction Principle}, colback={white},colframe={black},colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+Let $A$ be a set and $\mathcal{U}$ a superset containing $A$. 
+
+Let $\mathcal{A}^{c} = \{ x\in \mathcal{U} : x \not\in \mathcal{A}\}$, (that is $\mathcal{A}^{c}$ is the complement of $\mathcal{A}$ in $\mathcal{U}$). 
+
+Then the size of $|\mathcal{A}|$ is equal to the size of $\mathcal{U}$ where the size of the complement of $\mathcal{A}$ has been subtracted. 
+\[|\mathcal{A}| = |\mathcal{U}| - |\mathcal{A}^{c}|\]
+\end{tcolorbox}
+
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={Division Principle}, colback={white},colframe={black},colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+		
+Let $\mathcal{S}$ be a finite set which has been partitioned into $\mathcal{k}$ subsets of equal size. Then the size of each partition is given by the size of $\mathcal{S}$ divided by the size of the partition.  \[k = \frac{|S|}{|k_{i}|}\]
+\end{tcolorbox}
+
+
+\section{PSTs for Enumeration Problems}
+
+A \textbf{PST} is a Problem Solving Technique, which can be tried against a set of mathematical problems, situations, computations, etc.\footnote{That is, they are just really f'ing useful to have around (like pocket knives, multitools, eagle scouts, or a friend who can pick locks (Hi Dave!)}
+\medskip
+
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+\begin{tcolorbox}[title={PST: Menus Make You Multiply}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+		
+If the thing we are counting is the outcome of a multi-stage process then the number of outcomes is the product of the number of choices for each stage.
+		
+\tcblower
+		
+\textbf{Warning:} Multiplication has limitations when we are dealing with multi-stage processes. It is common that the decisions made in multi-stage process will influence the the number of decisions for the next stage. This is fine as long as the number of decisions required at each stage remain invariant (constant).
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+\begin{tcolorbox}[title={PPST: Keep the Chaos Down}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+To "keep the chaos down" when counting and to have some control over what is happening, it is helpful to order all of the involved objects (or some subset of them). This order can be random or according to some specific criterion.
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={PST: Encoding}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+When creating and using an encoding method, you must verify that there is a one-to-one correspondence between the set of encodings and all possible outcomes in the problem i.e., that every encoding corresponds to exactly one possible outcome, and every possible outcome corresponds to exactly one encoding.
+\end{tcolorbox}
+	
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={PST: Mutually Exclusive Cases}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]		
+When the number of decisions for each stage of a multi-stage process do not remain invariant then we must try to regain control of the possible chaos.
+
+\textit{In order to regain control try to break up the outcomes into several separate mutually exclusive cases, i.e., every possible outcome must belong to exactly one of these cases.}
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+
+\begin{tcolorbox}[title={PST: Partition Leads to Addition}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+Whenever we partition the outcomes of something into several cases, each requiring different counting methods, we \textbf{add the number of outcomes} in each case to get the total number of outcomes.
+\end{tcolorbox}
+  
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+ 
+\begin{tcolorbox}[title={PST: Counting the Complement},colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+
+We can use the method of \textbf{counting the complement}, when we can partition the total set of outcomes into the things we are interested in, and the rest (it's `negation' or `complement'). 
+  
+If the total is easy to count and the negation is easy to count, then we count the complement and our answer is just the difference of the two.
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+ 
+\begin{tcolorbox}[title={PST: Restricted Choices First},colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+If a problem contains a number of choices and for one or more we can say \emph{`it depends'}, then the multiplication principle cannot be applied. 
+
+\tcblower
+There also may not be an order in which the choices must be made, and it may happen that changing the order allows an easy solution by the multiplication principle.
+
+\tcbline
+
+\textbf{Rule of Thumb:} \textit{`Make the most restrictive choice first.'} 
+\end{tcolorbox}
+
+\section{Combinations and Permutations}
+
+Both combinations and permutations can be counted both with no repetitions allowed or with repetitions allowed (perhaps a limited number of repetitions). 
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},center title} 
+\begin{tcolorbox}[title={Combinations}, colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+		
+Combinations are not order sensitive. 
+
+That is a combination counts the number of \emph{unordered} arrangements of an object. 
+\tcblower
+
+\small \textbf{Combinations with Repetition} 
+\[\binom{n}{r}\]
+
+\tcbline 
+\small \textbf{Combinations with no Repetition} 
+\[\binom{n}{r} = \binom{n+r-1}{r}\]
+\end{tcolorbox}
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black}}
+ 
+\begin{tcolorbox}[title={Permutations},colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}]
+
+Permutations are order sensitive. 
+
+That is a permutation counts the number of \emph{ordered} arrangements of an object. 
+
+\tcblower
+\small \textbf{Permutations with Repetition} 
+\[P(n,r)\]
+
+\tcbline 
+\small \textbf{Permutations with no Repetition} 
+\[n^r\] 
+\end{tcolorbox}
+	
+ 
+
+\tcbset{enhanced,fonttitle=\bfseries\normalsize,fontupper=\normalsize\sffamily,colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},center title} 
+\begin{tcolorbox}[title={References},colback={white},colframe={black},sharp corners,colbacktitle={white},coltitle={black},fonttitle=\bfseries,subtitle style={boxrule=0.4pt,colback=white}] \textit{"A Decade of the Berkeley Math Circle: The American Experience"} Stankova, Zvezdelina, \& Rike, Tom, Volume I. AMC 10: 12. 
+\end{tcolorbox}
+
+
+\end{document} 

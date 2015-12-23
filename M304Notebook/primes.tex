@@ -1,0 +1,103 @@
+\subsection{Theorems About Primes}
+
+
+\subsubsection{Chinese Remainder Theorem}
+
+
+Given $n_{1},n_{2}, \ldots, n_{k}$ are positive integers such that $(n_{i},n_{i+1})$ are relatively prime pairs. 
+
+Then, for any integer sequence $a_{1},a_{2}, \ldots, a_{k}$ we can find an integer $x$ which solves the following system of simultaneous congruences.
+$ {\begin{cases}x\equiv a_{1}&{\pmod {n_{1}}}\\\quad \cdots \\x\equiv a_{k}&{\pmod {n_{k}}}\end{cases}} $
+
+\smallskip
+
+Moreover, all $x$ found solutions the system are congruent modulo the product, $N = n_{1} \times n_{2} \times \ldots \times n_{k}$. 
+
+\smallskip
+
+Therefore, 
+\[x\equiv y{\pmod {n_{i}}},\quad 1\leq i\leq k\qquad \Longleftrightarrow \qquad x\equiv y{\pmod {N}}. \]
+
+\medskip
+
+Sometimes, the system will have a solution even if the $(n_{i},n_{i+1})$ pairs are not relatively prime. 
+
+We can find a solution $x$ if and only if:
+\[ a_{i}\equiv a_{j}{\pmod {\gcd(n_{i},n_{j})}}\qquad \forall i,j \]
+All $x$ found solutions will be congruent modulo the least common multiple of the $n_{i}$.
+
+
+
+\subsubsection{Euler's Function}
+
+Euler's function $\phi(x)$ is the number of positive integers less than $x$ relatively prime to $x$.
+
+\smallskip
+
+If $\prod_{i=1}^n p^{e_{i}}_{i}$ is the prime factorization of $x$ then
+\[\phi(x) = \prod_{i=1}^{n} p^{e_{i} - 1}_{i} (p_{i} - 1)\]
+
+\smallskip
+
+\subsubsection{Euler's theorem}
+
+If $gcg(a,b)=1$ where $a,b \in \mathbb{Z}$ then,
+\[ 1 \equiv a^{\phi(b)} \mod{b} \]
+
+\medskip
+
+\subsubsection{Fermat's Little Theorem}
+\[1 \equiv a^{p-1} \mod{p} \]
+
+\medskip
+
+\subsubsection{The Euclidean Algorithm}
+if $a > b$ and $a,b \in \mathbb{Z}$ where 
+\[gcd(a, b) = gcd(a \mod{b}, b).\]
+
+
+If $\prod_{i=1}^n p^{e_{i}}_i$ is the prime factorization for $x$ then we have
+\[S(x) = \sum_{d\vert x} d = \prod_{i=1}^{n} \frac{p^{e_{i}+1}_{i} - 1}{p_{i} - 1}.\]
+
+\subsubsection{Perfect Numbers}
+The number $x$ is an even perfect number if and only if $x = 2^{n-1}(2^{n} - 1)$ and $2^{n} - 1$ is prime.
+
+
+\subsubsection{Wilson's theorem}
+The integer $n$ is a prime if and only if:
+\[(n-1)! \equiv -1 \mod{n}\]
+
+\pagebreak
+
+\subsubsection{M\"obius inversion:}
+
+$\mu(i) = $
+\begin{case}
+$1$ if $i = 1$.
+\end{case}
+\smallskip
+\begin{case}
+$0$ if $i$ is not square-free.
+\end{case}
+\smallskip
+\begin{case}
+$(-1)^{r}$ if $i$ is the product of $r$ distinct primes.
+\end{case}
+
+
+\subsubsection{Sequences}
+Given arithmetic sequences $f$ and $g$
+\[g(a) = \sum_{d \vert a} f(d)\]
+then,
+
+\[f(a) = \sum_{d \vert a} \mu(d) g \bigg( \frac{a}{d} \bigg) \]
+
+
+\subsubsection{Prime numbers}
+
+\todo{something doesn't look right in here.}
+
+\[p_{n}  = n \ln n + n \ln \ln n - n + n {\ln \ln n \over \ln n}
++ O\bigg({n \over \ln n}\bigg)\]
+
+\[ p_(n) = {n \over \ln n} + {n \over (\ln n)^2} + {2! n \over (\ln n)^3} \\+ O\bigg({n \over (\ln n)^4}\bigg)\]

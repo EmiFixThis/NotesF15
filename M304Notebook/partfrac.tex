@@ -1,0 +1,39 @@
+\subsection{Partial Fraction Decomposition}
+
+
+Let $f(x)$ and $g(x)$ be polynomials in terms of $x$.
+
+Then we can use partial fraction decomposition on the quotient $f(x)/g(x)$.
+
+
+\begin{case}
+
+If $deg(f) \geq deg(g)$ then, divide $f$ by $g$ to get:
+
+\[\frac{f(x)}{g(x)} = q(x) + \frac{f'(x)}{g(x)}\]
+
+Where, $deg(f') < deg(g)$.
+\end{case}
+
+\smallskip
+
+\begin{case}
+If not, break $g(x)$ into it's factors and consider the roots:
+
+\smallskip
+
+If a factor has a unique root:
+
+\[\frac{f(x)}{(x-a)g(x)} = \frac{A}{x-a} + \frac{f'(x)}{g(x)}\]
+
+where
+\[A = \left[\frac{f(x)}{g(x)}\right]_{x=a}\]
+
+\smallskip
+
+For factors with multiplicity:
+\[\frac{f(x)}{(x-a)^{m} g(x)} = \sum_{k=0}^{m-1} \frac{A_{k}}{(x-a)^{m-k}} + \frac{f'(x)}{g(x)}\]
+where,
+\[A_{k} = \frac{1}{k!}\left[ \frac{d^{k}}{dx^{k}} \left(\frac{f(x)}{g(x)}\right)\right]_{x=a}\]
+
+\end{case}
